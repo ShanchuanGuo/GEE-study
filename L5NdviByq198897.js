@@ -38,7 +38,7 @@ var newl5byq = ee.ImageCollection(ee.List(range.iterate(day_mosaics, ee.List([])
 print(newl5byq);
 Map.addLayer(newl5byq);
 // NDVI计算
-var addNdvi  =  function (img){
+var addNdvi = function(img){
 	var nir = img.select('B4');
 	var red = img.select('B3');
 	var ndvi = nir.subtract(red).divide(nir.add(red)).rename('NDVI');
